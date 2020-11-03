@@ -11,11 +11,7 @@ export default class Board extends Component {
       const parsedLS = JSON.parse(rawLS);
       this.state = {list: parsedLS}
     } else {
-      this.state = {
-        {
-          title: ''
-        }
-      }
+      
     }
   }
 }
