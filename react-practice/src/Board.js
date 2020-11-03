@@ -11,7 +11,39 @@ export default class Board extends Component {
       const parsedLS = JSON.parse(rawLS);
       this.state = {list: parsedLS}
     } else {
-      
+      this.state = {
+        lists: [
+          {
+            title: 'Jason',
+            id: 0, 
+            cards: [{
+              taskText: 'task one', 
+              listNumber: 0,
+              timeId: 0
+            }, 
+            {
+              taskText: 'task two',
+              listNumber: 0,
+              timeId: 1
+            }]
+          }, 
+          {
+            title: 'Ellen', 
+            id: 1, 
+            cards: [{
+              taskText: 'task one',
+              listNumber: 2,
+              timeId: 2,
+            }, 
+            {
+              taskText: 'task two', 
+              listNumber: 1,
+              timeId: 3
+            }]
+          }
+        ]
+      }
     }
+    localStorage.setItem('lists', JSON.stringify(this.state.lists))
   }
 }
