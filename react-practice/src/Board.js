@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Board.css'; 
 import List from './List';
+import { render } from 'react-dom';
 
 export default class Board extends Component {
   constructor(props) {
@@ -46,4 +47,19 @@ export default class Board extends Component {
     }
     localStorage.setItem('lists', JSON.stringify(this.state.lists))
   }
+
+render() {
+  const list = this.state.lists.map((list, index) => (
+    <li className = "list-wrapper" key = {index}> 
+      <List {...list} /> 
+    </li>
+  ));
+  return (
+    <div className = "board">
+      <ul className = "lists">
+        {lists}
+      </ul>
+    </div>
+  );
+}
 }
